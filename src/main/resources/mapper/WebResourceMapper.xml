@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yly.reamke_front_backend.mapper.WebResourceMapper">
+
+    <resultMap id="BaseResultMap" type="com.yly.reamke_front_backend.entity.WebResource">
+            <result property="userId" column="user_id" jdbcType="VARCHAR"/>
+            <result property="resSrc" column="res_src" jdbcType="VARCHAR"/>
+            <result property="resTransSize" column="res_trans_size" jdbcType="INTEGER"/>
+            <result property="resType" column="res_type" jdbcType="VARCHAR"/>
+            <result property="resDuration" column="res_duration" jdbcType="INTEGER"/>
+            <result property="resTime" column="res_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        user_id,res_src,res_trans_size,
+        res_type,res_duration,res_time
+    </sql>
+</mapper>

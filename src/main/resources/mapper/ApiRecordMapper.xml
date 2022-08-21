@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yly.reamke_front_backend.mapper.ApiRecordMapper">
+
+    <resultMap id="BaseResultMap" type="com.yly.reamke_front_backend.entity.ApiRecord">
+            <result property="userId" column="user_id" jdbcType="VARCHAR"/>
+            <result property="apiMethod" column="api_method" jdbcType="VARCHAR"/>
+            <result property="apiUrl" column="api_url" jdbcType="VARCHAR"/>
+            <result property="apiStatus" column="api_status" jdbcType="INTEGER"/>
+            <result property="apiTime" column="api_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        user_id,api_method,api_url,
+        api_status,api_time
+    </sql>
+</mapper>

@@ -1,0 +1,32 @@
+# 应用名称
+spring:
+  application:
+    name: front_end_monitor
+  datasource:
+    url: jdbc:mysql://localhost:3306/front_end_hello?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: qwerty666
+    driver-class-name : com.mysql.cj.jdbc.Driver
+logging:
+  config: classpath:logback.xml
+  level:
+    yly.myblog.controller: debug
+    java.sql: debug
+# 应用服务 WEB 访问端口
+server:
+  port: 8088
+
+# MyBatis Plus
+mybatis-plus:
+  global-config:
+#    db-config:
+      #      logic-delete-field: 这个感觉是全局配置删除字段的但是我还不熟练
+#      logic-delete-value: '2'
+#      logic-not-delete-value: '0'
+    banner: false                         # 关闭控制台的 LOGO
+  mapper-locations: classpath*:/mapper/**/*Mapper.xml
+  configuration:
+    #    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package:  com.yly.reamke_front_backend.entity
+

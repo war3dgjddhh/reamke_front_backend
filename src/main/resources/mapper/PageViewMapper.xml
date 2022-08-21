@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yly.reamke_front_backend.mapper.PageViewMapper">
+
+    <resultMap id="BaseResultMap" type="com.yly.reamke_front_backend.entity.PageView">
+        <result property="userId" column="user_id" jdbcType="VARCHAR"/>
+        <result property="routePath" column="route_path" jdbcType="VARCHAR"/>
+        <result property="pageDuration" column="page_duration" jdbcType="FLOAT"/>
+        <result property="pvTime" column="pv_time" jdbcType="TIMESTAMP"/>
+        <result property="userIp" column="user_ip" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        user_id,route_path,page_duration,
+        pv_time,user_ip
+    </sql>
+    <select id="listPV" resultType="com.yly.reamke_front_backend.entity.PageView">
+        select route_path, page_duration, pv_time, user_ip
+        from page_view where user_id = #{userId}
+        <if test="pv.route_path != null and pv.route_path != ''">
+            AND route_path like concat('%',#{pv.route_path})
+        </if>
+    </select>
+    <select id="listUV" resultType="com.yly.reamke_front_backend.entity.PageView">
+        select min(pv_time) as pv_time,avg(page_duration) as page_duration, user_ip, route_path
+        from page_view
+        where user_id = #{userId}
+        <if test="pv.route_path != null and pv.route_path != ''">
+            AND route_path like concat('%',#{pv.route_path})
+        </if>
+        group by user_ip, route_path ;
+    </select>
+
+</mapper>

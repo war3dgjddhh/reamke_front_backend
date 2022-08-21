@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yly.reamke_front_backend.mapper.HttpErrMapper">
+
+    <resultMap id="BaseResultMap" type="com.yly.reamke_front_backend.entity.HttpErr">
+            <result property="userId" column="user_id" jdbcType="VARCHAR"/>
+            <result property="errUrl" column="err_url" jdbcType="VARCHAR"/>
+            <result property="errBody" column="err_body" jdbcType="VARCHAR"/>
+            <result property="errStatus" column="err_status" jdbcType="INTEGER"/>
+            <result property="errTime" column="err_time" jdbcType="TIMESTAMP"/>
+            <result property="errResponse" column="err_response" jdbcType="VARCHAR"/>
+            <result property="errMethod" column="err_method" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        user_id,err_url,err_body,
+        err_status,err_time,err_response,
+        err_method
+    </sql>
+</mapper>

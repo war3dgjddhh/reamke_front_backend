@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yly.reamke_front_backend.mapper.WebPrefMapper">
+
+    <resultMap id="BaseResultMap" type="com.yly.reamke_front_backend.entity.WebPref">
+            <result property="userId" column="user_id" jdbcType="VARCHAR"/>
+            <result property="prefFp" column="pref_fp" jdbcType="FLOAT"/>
+            <result property="prefTti" column="pref_tti" jdbcType="FLOAT"/>
+            <result property="prefDomReady" column="pref_dom_ready" jdbcType="FLOAT"/>
+            <result property="prefLoad" column="pref_load" jdbcType="FLOAT"/>
+            <result property="prefFirstByte" column="pref_first_byte" jdbcType="FLOAT"/>
+            <result property="prefDns" column="pref_dns" jdbcType="FLOAT"/>
+            <result property="prefTcp" column="pref_tcp" jdbcType="FLOAT"/>
+            <result property="prefSsl" column="pref_ssl" jdbcType="FLOAT"/>
+            <result property="prefTtfb" column="pref_ttfb" jdbcType="FLOAT"/>
+            <result property="prefTrans" column="pref_trans" jdbcType="FLOAT"/>
+            <result property="prefDomParse" column="pref_dom_parse" jdbcType="FLOAT"/>
+            <result property="prefRes" column="pref_res" jdbcType="FLOAT"/>
+            <result property="prefCls" column="pref_cls" jdbcType="FLOAT"/>
+            <result property="prefFcp" column="pref_fcp" jdbcType="FLOAT"/>
+            <result property="prefFid" column="pref_fid" jdbcType="FLOAT"/>
+            <result property="prefLcp" column="pref_lcp" jdbcType="FLOAT"/>
+            <result property="reportTime" column="report_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        user_id,pref_fp,pref_tti,
+        pref_dom_ready,pref_load,pref_first_byte,
+        pref_dns,pref_tcp,pref_ssl,
+        pref_ttfb,pref_trans,pref_dom_parse,
+        pref_res,pref_cls,pref_fcp,
+        pref_fid,pref_lcp,report_time
+    </sql>
+</mapper>
